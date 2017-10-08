@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
@@ -26,6 +27,14 @@ public class SimulatorController implements Initializable{
 	@FXML public TextField requiredLower;
 	@FXML public TextField requiredUpper;
 	@FXML public TextField transferText;
+	
+	@FXML public Button run;
+
+	@FXML public Label singleDistance;
+	@FXML public Label singleEnergy;
+	@FXML public Label multiEnergy;
+	@FXML public Label singleTime;
+	@FXML public Label multiTime;
 	
 	public Cluster myCluster = null;
 	// 노드와 Charger를 저장할 Cluster 객체
@@ -85,6 +94,28 @@ public class SimulatorController implements Initializable{
 			
 		});
 		
+		
+		run.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				myCluster.Run();
+				
+				singleDistance.setText(Double.toString(myCluster.singleDistanceResult) + "m");
+				singleEnergy.setText(Double.toString(myCluster.singleEnergyResult));
+				
+				singleTime.setText(Double.toString(myCluster.singleTime));
+				
+				multiEnergy.setText(Double.toString(myCluster.multiEnergyResult));
+				multiTime.setText(Double.toString(myCluster.multiTime));
+				
+				System.out.println(myCluster.singleDistanceResult);
+			}
+			
+			
+		});
+		
 		CreateScene.setOnAction(new EventHandler<ActionEvent>(){
 
 			@Override
@@ -106,11 +137,9 @@ public class SimulatorController implements Initializable{
 					
 					// 잘 보이기 위해서 20배를 하도록 한다.
 					
-					clusterRadius *= 20;
-					
 					myCluster.SetRadius(clusterRadius);
 					// Cluster에 설정
-					
+					myCluster.DrawRadius = clusterRadius * 20;
 					
 					for(int i=0;i<Integer.valueOf(numText.getText());i++)
 					{
@@ -135,6 +164,7 @@ public class SimulatorController implements Initializable{
 					
 					GraphicsContext gc = myCanvas.getGraphicsContext2D();
 					
+					myCluster.ChangeDrawRadius(1.0);
 					myCluster.Draw(gc);
 					// 그림을 그린다.
 				}

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.MC.Efficient.SimulatorController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.MC.Efficient.SimulatorController">
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="380.0" style="-fx-background-color: white; -fx-border-color: black;" BorderPane.alignment="CENTER">
          <children>
@@ -132,9 +132,55 @@
                      <font>
                         <Font name="HYgprM" size="18.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="run" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="실행">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="380.0" style="-fx-border-color: black;" text="Single Charging">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="singleDistance" alignment="CENTER" prefHeight="40.0" prefWidth="380.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="singleEnergy" alignment="CENTER" prefHeight="40.0" prefWidth="380.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="singleTime" alignment="CENTER" prefHeight="40.0" prefWidth="380.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="380.0" style="-fx-border-color: black;" text="Multi Charging">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="multiEnergy" alignment="CENTER" prefHeight="40.0" prefWidth="380.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="multiTime" alignment="CENTER" prefHeight="40.0" prefWidth="380.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
    </left>

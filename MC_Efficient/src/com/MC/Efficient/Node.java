@@ -10,7 +10,7 @@ public class Node {
 	
 	public double RequiredEnergy;
 	
-	public double ReceiveAntennaGain;
+	public double ReceiveAntennaGain = 1.0;
 	
 	public double Retenna = 1.0; 
 	//Retenna 변환율, 다이오드에 따라서 거의 100%에 가까운 변환효율을 보여준다.

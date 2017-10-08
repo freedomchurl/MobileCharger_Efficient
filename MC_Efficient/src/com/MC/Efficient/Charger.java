@@ -16,8 +16,11 @@ public class Charger{
 	public double TransferEnergy;
 	// 전송에 쓰는 에너지 J 단위로 통합한다.
 	
-	public double TransferAntennaGain;
-	
+	public double TransferAntennaGain = 36.0;
+	public double WaveLength = 1.0;
+	public double polarizationLoss = 1.0;
+	public double friisParameter = 0.1;
+	// 이게 몇이 맞는건가?
 	
 	Charger()
 	{
