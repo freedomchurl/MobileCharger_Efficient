@@ -102,13 +102,13 @@ public class SimulatorController implements Initializable{
 				// TODO Auto-generated method stub
 				myCluster.Run();
 				
-				singleDistance.setText(Double.toString(myCluster.singleDistanceResult) + "m");
-				singleEnergy.setText(Double.toString(myCluster.singleEnergyResult));
+				singleDistance.setText("이동거리 " + Double.toString(myCluster.singleDistanceResult) + "m");
+				singleEnergy.setText("충전 에너지 " + Double.toString(myCluster.singleEnergyResult));
 				
-				singleTime.setText(Double.toString(myCluster.singleTime));
+				singleTime.setText("충전시간 " + Double.toString(myCluster.singleTime));
 				
-				multiEnergy.setText(Double.toString(myCluster.multiEnergyResult));
-				multiTime.setText(Double.toString(myCluster.multiTime));
+				multiEnergy.setText("충전 에너지 " + Double.toString(myCluster.multiEnergyResult));
+				multiTime.setText("충전시간 " + Double.toString(myCluster.multiTime));
 				
 				System.out.println(myCluster.singleDistanceResult);
 			}

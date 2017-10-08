@@ -1,6 +1,7 @@
 package com.MC.Efficient;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
@@ -112,6 +113,23 @@ public class Cluster {
 		double centerfriisResult = centerCharger.TransferAntennaGain * chargedNodes.get(0).ReceiveAntennaGain * chargedNodes.get(0).Retenna
 				/ centerCharger.polarizationLoss * Math.pow((centerCharger.WaveLength/(this.Radius + centerCharger.friisParameter)), 2);
 		
+		chargedNodes.sort(new Comparator<Node>()
+				{
+
+					@Override
+					public int compare(Node o1, Node o2) {
+						// TODO Auto-generated method stub
+						if(o1.Angle > o2.Angle)
+							return 1;
+						else if(o1.Angle < o2.Angle)
+							return -1;
+						else
+							return 0;
+					}
+
+					
+			
+				});
 		
 		//System.out.println("Radius = " + this.Radius);
 		

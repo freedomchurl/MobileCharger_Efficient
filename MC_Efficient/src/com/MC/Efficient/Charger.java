@@ -19,7 +19,7 @@ public class Charger{
 	public double TransferAntennaGain = 36.0;
 	public double WaveLength = 1.0;
 	public double polarizationLoss = 1.0;
-	public double friisParameter = 0.1;
+	public double friisParameter = 0.05;
 	// 이게 몇이 맞는건가?
 	
 	Charger()
